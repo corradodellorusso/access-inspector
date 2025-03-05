@@ -1,0 +1,59 @@
+{
+  "name": "access-inspector",
+  "version": "0.0.0",
+  "description": "A lightweight utility that tracks which properties of an object have been accessed",
+  "keywords": [
+    "access",
+    "proxy",
+    "test",
+    "typescript",
+    "object",
+    "proxy",
+    "tracker",
+    "access",
+    "property",
+    "getter",
+    "watcher",
+    "spy",
+    "monitor",
+    "debugging",
+    "interceptor",
+    "reflect",
+    "audit",
+    "trace"
+  ],
+  "main": "dist/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "vitest",
+    "dev:ui": "vitest --ui --coverage.enabled=true",
+    "build": "tsup",
+    "lint": "tsc",
+    "test": "vitest run --coverage",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "check-exports": "attw --pack .",
+    "ci": "npm run build && npm run check-format && npm run check-exports && npm run lint && npm run test"
+  },
+  "author": "Corrado dello Russo <corrado.dellorusso@gmail.com> (https://corradodellorusso.it)",
+  "license": "MIT",
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.17.4",
+    "@vitest/coverage-istanbul": "^3.0.7",
+    "@vitest/ui": "^3.0.7",
+    "prettier": "^3.5.3",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.7"
+  }
+}

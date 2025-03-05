@@ -1,0 +1,1 @@
+export { inspectAccesses } from "./proxy";
