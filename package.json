@@ -1,6 +1,6 @@
 {
   "name": "access-inspector",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A lightweight utility that tracks which properties of an object have been accessed",
   "keywords": [
     "access",
