@@ -8,7 +8,7 @@
 
 Useful for:  
 ✅ Debugging & Auditing – find out which properties are actually used  
-✅ GraphQL & API Optimization – ensure requested fields are needed  
+✅ GraphQL & API Optimization – ensure requested fields are needed
 
 ---
 
@@ -38,23 +38,23 @@ const [trackedUser, inspector] = inspectAccesses(user);
 console.log(trackedUser.name); // "Alice"
 console.log(trackedUser.email); // "alice@example.com"
 
-console.log(inspector.fields()) // ["root.id", "root.name", "root.email"]
-console.log(inspector.visited()) // ["root.name", "root.email"]
-console.log(inspector.unvisited()) // ["root.id"]
+console.log(inspector.fields()); // ["root.id", "root.name", "root.email"]
+console.log(inspector.visited()); // ["root.name", "root.email"]
+console.log(inspector.unvisited()); // ["root.id"]
 ```
 
-It works with arrays and nested objects as well! 
+It works with arrays and nested objects as well!
 
 ```typescript
 import { inspectAccesses } from "access-inspector";
 
 const user = {
   id: 1,
-  flags: ['admin', 'verified'],
+  flags: ["admin", "verified"],
   contacts: {
-    phone: '123-456-7890',
-    email: 'alice@example.com'
-  }
+    phone: "123-456-7890",
+    email: "alice@example.com",
+  },
 };
 
 const [trackedUser, inspector] = inspectAccesses(user);
@@ -62,7 +62,7 @@ const [trackedUser, inspector] = inspectAccesses(user);
 console.log(trackedUser.flags[0]); // "admin"
 console.log(trackedUser.contacts.phone); // "123-456-7890"
 
-console.log(inspector.fields()) // ["root.id", "root.flags", "root.flags.0", "root.flags.1", "root.contacts", "root.contacts.phone", "root.contacts.email"]
-console.log(inspector.visited()) // ["root.flags", "root.flags.0", "root.contacts", "root.contacts.phone"]
-console.log(inspector.unvisited()) // ["root.id", "root.flags.1", "root.contacts.email"]
+console.log(inspector.fields()); // ["root.id", "root.flags", "root.flags.0", "root.flags.1", "root.contacts", "root.contacts.phone", "root.contacts.email"]
+console.log(inspector.visited()); // ["root.flags", "root.flags.0", "root.contacts", "root.contacts.phone"]
+console.log(inspector.unvisited()); // ["root.id", "root.flags.1", "root.contacts.email"]
 ```
